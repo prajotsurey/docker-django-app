@@ -25,7 +25,7 @@ SECRET_KEY = '3d7mkmo(l(++z6ck99rag8bsxrx(mcs=l6eu*c8(=wwnu0z7nt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'prfapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+	'USER': 'postgres',
+	'HOST': 'db',
+	'PORT': 5432,
     }
 }
 
